@@ -45,6 +45,10 @@
     self.hud.label.text = text;
     
     self.hud.label.numberOfLines = 2;
+    // 黑色背景白字
+    self.hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    self.hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.7];
+    self.hud.contentColor=[UIColor whiteColor];//字的颜色
     
     if (text.length) {
         
