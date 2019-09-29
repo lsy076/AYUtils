@@ -130,6 +130,12 @@
 #pragma mark 数据加载完毕
 - (void) webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
 //    NSLog(@"UIWebView-->finish");
+    //网页加载完成后禁止缩放
+//    NSString *injectionJSString = @"var script = document.createElement('meta');"
+//    "script.name = 'viewport';"
+//    "script.content=\"width=device-width, user-scalable=no\";"
+//    "document.getElementsByTagName('head')[0].appendChild(script);";
+//    [webView evaluateJavaScript:injectionJSString completionHandler:nil];
 }
 
 #pragma mark 加载数据错误
@@ -175,6 +181,11 @@
 {
     _canGoForward = self.webView.canGoForward;
     return self.webView.canGoForward;
+}
+
+- (void)setAllowZoom:(BOOL)allowZoom
+{
+    _allowZoom = allowZoom;
 }
 
 - (UIViewController *)findCurrentViewController

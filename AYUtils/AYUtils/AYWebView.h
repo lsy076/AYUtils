@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL canGoBack;
 //是否能下一页
 @property (assign, nonatomic) BOOL canGoForward;
+//是否允许缩放
+@property (assign, nonatomic) BOOL allowZoom;
 
 + (instancetype)setupWebViewWithFrame:(CGRect)frame;
 //加载网页

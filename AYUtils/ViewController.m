@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AYUtils/AYWebView.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    AYWebView *webView = [[AYWebView alloc] initWithFrame:self.view.bounds];
+    [webView loadUrl:@"https://www.baidu.com"];
+    [self.view addSubview:webView];
 }
 
 
