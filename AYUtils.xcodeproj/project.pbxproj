@@ -39,6 +39,7 @@
 		195B6B5923403E3C002637AA /* AYAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYAlertViewController.h; sourceTree = "<group>"; };
 		195B6B5B23403E4A002637AA /* AYGetLocalIpAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYGetLocalIpAddress.m; sourceTree = "<group>"; };
 		195B6B5C23403E4A002637AA /* AYGetLocalIpAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYGetLocalIpAddress.h; sourceTree = "<group>"; };
+		195B6B7923404D18002637AA /* AYUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUtils.h; sourceTree = "<group>"; };
 		2BAE42476DCD3EAE45EE4CBD /* Pods-AYUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYUtils.release.xcconfig"; path = "Target Support Files/Pods-AYUtils/Pods-AYUtils.release.xcconfig"; sourceTree = "<group>"; };
 		A829B4762E8BAB80E42719D9 /* libPods-AYUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AYUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43AA4229AFE84EB30D2EC5E /* Pods-AYUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYUtils.debug.xcconfig"; path = "Target Support Files/Pods-AYUtils/Pods-AYUtils.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		195B6B5123403E13002637AA /* AYUtils */ = {
 			isa = PBXGroup;
 			children = (
+				195B6B7923404D18002637AA /* AYUtils.h */,
 				195B6B5C23403E4A002637AA /* AYGetLocalIpAddress.h */,
 				195B6B5B23403E4A002637AA /* AYGetLocalIpAddress.m */,
 				195B6B5923403E3C002637AA /* AYAlertViewController.h */,
