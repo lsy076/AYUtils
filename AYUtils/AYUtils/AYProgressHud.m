@@ -7,7 +7,7 @@
 //
 
 #import "AYProgressHud.h"
-#import <MBProgressHUD.h>
+#import "MBProgressHud.h"
 
 @interface AYProgressHud ()
 
