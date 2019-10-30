@@ -37,17 +37,17 @@
         self.webView.navigationDelegate = self;
         [self addSubview:self.webView];
         
-        UIViewController *vc = [self findCurrentViewController];
-        
-        //获取状态栏的rect
-        CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
-        //获取导航栏的rect
-        CGRect navRect = vc.navigationController.navigationBar.frame;
-        
-        float height = statusRect.size.height+navRect.size.height;
+//        UIViewController *vc = [self findCurrentViewController];
+//
+//        //获取状态栏的rect
+//        CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
+//        //获取导航栏的rect
+//        CGRect navRect = vc.navigationController.navigationBar.frame;
+//
+//        float height = statusRect.size.height+navRect.size.height;
         
         //进度条初始化
-        self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, height, [[UIScreen mainScreen] bounds].size.width, 2)];
+        self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 2)];
         self.progressView.backgroundColor = [UIColor blueColor];
         //设置进度条的高度，下面这句代码表示进度条的宽度变为原来的1倍，高度变为原来的1.5倍.
         self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
