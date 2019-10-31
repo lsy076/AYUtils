@@ -52,7 +52,7 @@
     
     self.webView.frame = self.bounds;
     
-    self.progressView.frame = CGRectMake(0, self.webView.frame.origin.y, [[UIScreen mainScreen] bounds].size.width, 2);
+    self.progressView.frame = CGRectMake(0, self.webView.frame.origin.y, self.webView.frame.size.width, 2);
 }
 
 - (void)loadUrl:(NSString *)url
