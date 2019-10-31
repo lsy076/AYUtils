@@ -51,7 +51,15 @@
     
     self.webView.frame = self.bounds;
     
-    self.progressView.frame = CGRectMake(0, self.webView.frame.origin.y, self.webView.frame.size.width, 2);
+    UIViewController *vc = [AYWebView findCurrentViewController];
+    
+    CGFloat height = self.webView.frame.origin.y;
+    
+    if (vc.navigationController.navigationBar.translucent) {
+        height += vc.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+    }
+    
+    self.progressView.frame = CGRectMake(0, height, self.webView.frame.size.width, 2);
     
 }
 
