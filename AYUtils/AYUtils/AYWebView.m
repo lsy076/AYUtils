@@ -27,13 +27,13 @@
         
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         
-        self.webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:config];
+        self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
         self.webView.contentScaleFactor = 0;
         self.webView.navigationDelegate = self;
         [self addSubview:self.webView];
         
         //进度条初始化
-        self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, self.webView.frame.origin.y, [[UIScreen mainScreen] bounds].size.width, 2)];
+        self.progressView = [UIProgressView new];
         self.progressView.backgroundColor = [UIColor blueColor];
         //设置进度条的高度，下面这句代码表示进度条的宽度变为原来的1倍，高度变为原来的1.5倍.
         self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
@@ -44,6 +44,15 @@
         [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.webView.frame = self.bounds;
+    
+    self.progressView.frame = CGRectMake(0, self.webView.frame.origin.y, [[UIScreen mainScreen] bounds].size.width, 2);
 }
 
 - (void)loadUrl:(NSString *)url
