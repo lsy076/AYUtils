@@ -33,7 +33,7 @@
         [self addSubview:self.webView];
         
         //进度条初始化
-        self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, [self navgationBarHeightAndStatusBarHeight], [[UIScreen mainScreen] bounds].size.width, 2)];
+        self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, self.webView.frame.origin.y, [[UIScreen mainScreen] bounds].size.width, 2)];
         self.progressView.backgroundColor = [UIColor blueColor];
         //设置进度条的高度，下面这句代码表示进度条的宽度变为原来的1倍，高度变为原来的1.5倍.
         self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
@@ -75,7 +75,7 @@
         {
             //            NSLog(@"title - %@", self.webView.title);
             
-            UIViewController *vc = [self findCurrentViewController];
+            UIViewController *vc = [AYWebView findCurrentViewController];
             vc.title = self.webView.title;
         }
         else
@@ -145,7 +145,7 @@
         [self.webView goBack];
     }else{
         //退出控制器
-        UIViewController *vc = [self findCurrentViewController];
+        UIViewController *vc = [AYWebView findCurrentViewController];
         [vc.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -153,7 +153,7 @@
 - (void)closePage
 {
     //退出控制器
-    UIViewController *vc = [self findCurrentViewController];
+    UIViewController *vc = [AYWebView findCurrentViewController];
     [vc.navigationController popViewControllerAnimated:YES];
 }
 
@@ -169,7 +169,7 @@
     return self.webView.canGoForward;
 }
 
-- (UIViewController *)findCurrentViewController
++ (UIViewController *)findCurrentViewController
 {
     UIWindow *window = [[UIApplication sharedApplication].delegate window];
     UIViewController *topViewController = [window rootViewController];
@@ -194,19 +194,6 @@
         }
     }
     return topViewController;
-}
-
-- (CGFloat)navgationBarHeightAndStatusBarHeight
-{
-    UIViewController *vc = [self findCurrentViewController];
-    //获取状态栏的rect
-    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
-    //获取导航栏的rect
-    CGRect navRect = vc.navigationController.navigationBar.frame;
-
-    float height = statusRect.size.height+navRect.size.height;
-    
-    return height;
 }
 
 @end

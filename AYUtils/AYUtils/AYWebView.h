@@ -21,8 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)goBack;
 //关闭网页
 - (void)closePage;
-//导航栏与状态栏高度
-- (CGFloat)navgationBarHeightAndStatusBarHeight;
+
 @end
 
 NS_ASSUME_NONNULL_END
