@@ -23,7 +23,7 @@
     [webView loadUrl:@"https://www.baidu.com"];
     [self.view addSubview:webView];
     
-    
+    NSLog(@"%.2f", self.view.frame.origin.y);
 }
 
 
