@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    AYWebView *webView = [AYWebView new];
+    AYWebView *webView = [[AYWebView alloc] initWithFrame:CGRectZero];
     webView.frame = self.view.bounds;
     [webView loadUrl:@"https://www.baidu.com"];
     [self.view addSubview:webView];

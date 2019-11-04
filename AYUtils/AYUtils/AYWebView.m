@@ -49,10 +49,9 @@
 {
     [super layoutSubviews];
     
-    self.webView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    self.webView.frame = self.bounds;
     
     self.progressView.frame = CGRectMake(0, 0, self.webView.frame.size.width, 2);
-    
 }
 
 - (void)loadUrl:(NSString *)url
