@@ -53,8 +53,6 @@
     
     self.progressView.frame = CGRectMake(0, 0, self.webView.frame.size.width, 2);
     
-    NSLog(@"%@", self);
-    
 }
 
 - (void)loadUrl:(NSString *)url
