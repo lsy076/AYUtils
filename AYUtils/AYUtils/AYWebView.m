@@ -25,16 +25,12 @@
     
     if (self) {
         
-        self.backgroundColor = [UIColor redColor];
-        
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         
         self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
         self.webView.contentScaleFactor = 0;
         self.webView.navigationDelegate = self;
         [self addSubview:self.webView];
-        
-        self.webView.backgroundColor = [UIColor blueColor];
         
         //进度条初始化
         self.progressView = [UIProgressView new];
