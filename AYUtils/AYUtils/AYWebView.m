@@ -25,6 +25,8 @@
     
     if (self) {
         
+        self.backgroundColor = [UIColor redColor];
+        
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         
         self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
@@ -32,11 +34,13 @@
         self.webView.navigationDelegate = self;
         [self addSubview:self.webView];
         
+        self.webView.backgroundColor = [UIColor blueColor];
+        
         //进度条初始化
         self.progressView = [UIProgressView new];
         //设置进度条的高度，下面这句代码表示进度条的宽度变为原来的1倍，高度变为原来的1.5倍.
         self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
-        [self addSubview:self.progressView];
+        [self.webView addSubview:self.progressView];
         
         [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         
@@ -49,17 +53,11 @@
 {
     [super layoutSubviews];
     
-    self.webView.frame = self.bounds;
+    self.webView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
-    UIViewController *vc = [AYWebView findCurrentViewController];
+    self.progressView.frame = CGRectMake(0, 0, self.webView.frame.size.width, 2);
     
-    CGFloat height = self.webView.frame.origin.y;
-    
-    if (vc.navigationController.navigationBar.translucent) {
-        height += vc.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    }
-    
-    self.progressView.frame = CGRectMake(0, height, self.webView.frame.size.width, 2);
+    NSLog(@"%@", self);
     
 }
 
@@ -92,7 +90,7 @@
         {
             //            NSLog(@"title - %@", self.webView.title);
             
-            UIViewController *vc = [AYWebView findCurrentViewController];
+            UIViewController *vc = [self findCurrentViewController];
             vc.title = self.webView.title;
         }
         else
@@ -162,7 +160,7 @@
         [self.webView goBack];
     }else{
         //退出控制器
-        UIViewController *vc = [AYWebView findCurrentViewController];
+        UIViewController *vc = [self findCurrentViewController];
         [vc.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -170,7 +168,7 @@
 - (void)closePage
 {
     //退出控制器
-    UIViewController *vc = [AYWebView findCurrentViewController];
+    UIViewController *vc = [self findCurrentViewController];
     [vc.navigationController popViewControllerAnimated:YES];
 }
 
@@ -186,7 +184,7 @@
     return self.webView.canGoForward;
 }
 
-+ (UIViewController *)findCurrentViewController
+- (UIViewController *)findCurrentViewController
 {
     UIWindow *window = [[UIApplication sharedApplication].delegate window];
     UIViewController *topViewController = [window rootViewController];
@@ -211,6 +209,25 @@
         }
     }
     return topViewController;
+}
+
+- (CGFloat)navigationBarHeight
+{
+    UIViewController *vc = [self findCurrentViewController];
+    
+    return vc.navigationController.navigationBar.frame.size.height;
+}
+
+- (CGFloat)statusBarHeight
+{
+    return [UIApplication sharedApplication].statusBarFrame.size.height;
+}
+
+- (CGFloat)tabbarHeight
+{
+    UIViewController *vc = [self findCurrentViewController];
+    
+    return vc.tabBarController.tabBar.frame.size.height;
 }
 
 @end

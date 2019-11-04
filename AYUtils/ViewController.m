@@ -18,12 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     AYWebView *webView = [AYWebView new];
     webView.frame = self.view.bounds;
     [webView loadUrl:@"https://www.baidu.com"];
     [self.view addSubview:webView];
     
-    NSLog(@"%.2f", self.view.frame.origin.y);
+    NSLog(@"%@", self.view);
 }
 
 
