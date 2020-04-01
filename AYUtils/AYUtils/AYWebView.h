@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum : NSUInteger {
-    LOAD_TYPE_URL,
-    LOAD_TYPE_HTML
-} LOAD_TYPE;
-
 @class AYWebView;
 
 @protocol AYWebViewDelegate <NSObject>

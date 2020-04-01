@@ -21,9 +21,7 @@
     
     AYWebView *webView = [[AYWebView alloc] initWithFrame:CGRectZero];
     webView.frame = self.view.bounds;
-//    [webView loadUrl:@"https://www.baidu.com"];
-    NSString *loadString = @"{data={action=getSdkInfo;uuid=hrjtkvciakciuiomuojxxswsubrfizut;};fromDev=432;toDev=g_12872;}";
-    [webView loadHTMLString:[NSString stringWithFormat:@"<html><body><div id = 'jsonType'>%@</div></body></html>", loadString]];
+    [webView loadUrl:@"https://www.baidu.com"];
     webView.webViewDelegate = self;
     [self.view addSubview:webView];
     

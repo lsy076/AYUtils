@@ -66,8 +66,8 @@
             }];
         }
     }
-    
-    NSURL *nsurl = [NSURL URLWithString:url];
+    NSString *encodedString = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *nsurl = [NSURL URLWithString:encodedString];
     NSURLRequest *request = [NSURLRequest requestWithURL:nsurl];
     [self.webView loadRequest:request];
 }
