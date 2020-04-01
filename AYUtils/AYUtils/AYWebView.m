@@ -53,12 +53,39 @@
     
     self.progressView.frame = CGRectMake(0, 0, self.webView.frame.size.width, 2);
 }
-
+//加载URL
 - (void)loadUrl:(NSString *)url
 {
+    if(@available(iOS 11, *)){
+            //发送请求前插入cookie
+        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+        WKHTTPCookieStore *cookieStore = self.webView.configuration.websiteDataStore.httpCookieStore;
+        for (NSHTTPCookie *cookie in cookies) {
+            [cookieStore setCookie:cookie completionHandler:^{
+                
+            }];
+        }
+    }
+    
     NSURL *nsurl = [NSURL URLWithString:url];
     NSURLRequest *request = [NSURLRequest requestWithURL:nsurl];
     [self.webView loadRequest:request];
+}
+//加载本地HTML串
+- (void)loadHTMLString:(NSString *)string
+{
+    if(@available(iOS 11, *)){
+            //发送请求前插入cookie
+        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+        WKHTTPCookieStore *cookieStore = self.webView.configuration.websiteDataStore.httpCookieStore;
+        for (NSHTTPCookie *cookie in cookies) {
+            [cookieStore setCookie:cookie completionHandler:^{
+                
+            }];
+        }
+    }
+    
+    [self.webView loadHTMLString:string baseURL:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
@@ -124,12 +151,24 @@
 #pragma mark 数据加载完毕
 - (void) webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
 //    NSLog(@"UIWebView-->finish");
-    //网页加载完成后禁止缩放
-//    NSString *injectionJSString = @"var script = document.createElement('meta');"
-//    "script.name = 'viewport';"
-//    "script.content=\"width=device-width, user-scalable=no\";"
-//    "document.getElementsByTagName('head')[0].appendChild(script);";
-//    [webView evaluateJavaScript:injectionJSString completionHandler:nil];
+
+    //  网页加载完成后禁止缩放
+    NSString *injectionJSString = @"var script = document.createElement('meta');"
+    "script.name = 'viewport';"
+    "script.content=\"width=device-width, user-scalable=no\";"
+    "document.getElementsByTagName('head')[0].appendChild(script);";
+    [webView evaluateJavaScript:injectionJSString completionHandler:nil];
+    
+    NSString *content = @"document.getElementById('jsonType').innerText";
+    
+    [webView evaluateJavaScript:content completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        
+        NSString *jsContent = [NSString stringWithFormat:@"document.getElementById('jsonType').innerText = JSON.stringify(JSON.parse('%@'),null,2)", result];
+        
+        [webView evaluateJavaScript:jsContent completionHandler:nil];
+        
+        
+    }];
 }
 
 #pragma mark 加载数据错误
@@ -144,6 +183,10 @@
         [webView loadRequest:navigationAction.request];
     }
     decisionHandler(WKNavigationActionPolicyAllow);
+    //返回当前加载的网址
+    if ([self.webViewDelegate respondsToSelector:@selector(webView:didFinishLoadedWithURL:)]) {
+        [self.webViewDelegate webView:self didFinishLoadedWithURL:navigationAction.request.URL.absoluteString];
+    }
 }
 
 - (void)goBack

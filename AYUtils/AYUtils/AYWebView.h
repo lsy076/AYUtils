@@ -8,11 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    LOAD_TYPE_URL,
+    LOAD_TYPE_HTML
+} LOAD_TYPE;
+
+@class AYWebView;
+
+@protocol AYWebViewDelegate <NSObject>
+
+- (void)webView:(AYWebView *_Nullable)webView didFinishLoadedWithURL:(NSString *_Nullable)url;
+
+@end
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AYWebView : UIView
-//加载网页
+//加载URL
 - (void)loadUrl:(NSString *)url;
+//加载HTML
+- (void)loadHTMLString:(NSString *)string;
 //是否能上一页
 @property (assign, nonatomic) BOOL canGoBack;
 //是否能下一页
@@ -21,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)goBack;
 //关闭网页
 - (void)closePage;
+
+@property (weak, nonatomic) id <AYWebViewDelegate> webViewDelegate;
 
 @end
 
