@@ -7,37 +7,21 @@
 //
 
 #import "ViewController.h"
-#import "AYUtils/AYWebView.h"
+#import "NextViewController.h"
 
-@interface ViewController () <AYWebViewDelegate>
-@property (strong, nonatomic) AYWebView *webView;
+@interface ViewController ()
+
 @end
 
 @implementation ViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self.webView goBack];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    AYWebView *webView = [[AYWebView alloc] initWithFrame:CGRectZero];
-    webView.frame = self.view.bounds;
-    [webView loadUrl:@"https://www.baidu.com"];
-    webView.webViewDelegate = self;
-    [self.view addSubview:webView];
-    self.webView = webView;
     
 }
-
-- (void)webView:(AYWebView *)webView didFinishLoadedWithURL:(NSString *)url
-{
-    NSLog(@"%@", url);
+- (IBAction)jumpWebView:(id)sender {
+    
+    [self.navigationController pushViewController:[NextViewController new] animated:YES];
 }
 
 @end

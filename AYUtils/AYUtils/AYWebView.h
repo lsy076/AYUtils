@@ -19,17 +19,24 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AYWebView : UIView
-//加载URL
-- (void)loadUrl:(NSString *)url;
-//加载HTML
-- (void)loadHTMLString:(NSString *)string;
+
 //是否能上一页
 @property (assign, nonatomic) BOOL canGoBack;
 //是否能下一页
 @property (assign, nonatomic) BOOL canGoForward;
+
+//加载URL
+- (void)loadUrl:(NSString *)url;
+//加载HTML
+- (void)loadHTMLString:(NSString *)string;
+
 //返回上一级
 - (void)goBack;
-//关闭网页
+//跳转下一级
+- (void)goForward;
+//刷新当前页
+- (void)goRefreshCurrentPage;
+//关闭网页（popViewController）
 - (void)closePage;
 
 @property (weak, nonatomic) id <AYWebViewDelegate> webViewDelegate;

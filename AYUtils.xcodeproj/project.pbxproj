@@ -17,6 +17,7 @@
 		195B6B5723403E30002637AA /* AYWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 195B6B5423403E2F002637AA /* AYWebView.m */; };
 		195B6B5A23403E3C002637AA /* AYAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195B6B5823403E3C002637AA /* AYAlertViewController.m */; };
 		195B6B5D23403E4A002637AA /* AYGetLocalIpAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 195B6B5B23403E4A002637AA /* AYGetLocalIpAddress.m */; };
+		35A60C8F24348E5500BF7148 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A60C8E24348E5500BF7148 /* NextViewController.m */; };
 		9F79ACACF029A7B48A3F5B2D /* libPods-AYUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A829B4762E8BAB80E42719D9 /* libPods-AYUtils.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		195B6B5C23403E4A002637AA /* AYGetLocalIpAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYGetLocalIpAddress.h; sourceTree = "<group>"; };
 		195B6B7923404D18002637AA /* AYUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUtils.h; sourceTree = "<group>"; };
 		2BAE42476DCD3EAE45EE4CBD /* Pods-AYUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYUtils.release.xcconfig"; path = "Target Support Files/Pods-AYUtils/Pods-AYUtils.release.xcconfig"; sourceTree = "<group>"; };
+		35A60C8D24348E5500BF7148 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
+		35A60C8E24348E5500BF7148 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		A829B4762E8BAB80E42719D9 /* libPods-AYUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AYUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43AA4229AFE84EB30D2EC5E /* Pods-AYUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYUtils.debug.xcconfig"; path = "Target Support Files/Pods-AYUtils/Pods-AYUtils.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +86,8 @@
 				195B6B3C23403D6E002637AA /* AppDelegate.m */,
 				195B6B3E23403D6E002637AA /* ViewController.h */,
 				195B6B3F23403D6E002637AA /* ViewController.m */,
+				35A60C8D24348E5500BF7148 /* NextViewController.h */,
+				35A60C8E24348E5500BF7148 /* NextViewController.m */,
 				195B6B4123403D6F002637AA /* Main.storyboard */,
 				195B6B4423403D78002637AA /* Assets.xcassets */,
 				195B6B4623403D78002637AA /* LaunchScreen.storyboard */,
@@ -226,6 +231,7 @@
 				195B6B4B23403D78002637AA /* main.m in Sources */,
 				195B6B5623403E30002637AA /* AYProgressHud.m in Sources */,
 				195B6B3D23403D6E002637AA /* AppDelegate.m in Sources */,
+				35A60C8F24348E5500BF7148 /* NextViewController.m in Sources */,
 				195B6B5A23403E3C002637AA /* AYAlertViewController.m in Sources */,
 				195B6B5D23403E4A002637AA /* AYGetLocalIpAddress.m in Sources */,
 			);

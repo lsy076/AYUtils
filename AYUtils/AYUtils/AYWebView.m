@@ -190,14 +190,18 @@
 
 - (void)goBack
 {
-    if (self.webView.canGoBack==YES) {
-        //返回上级页面
-        [self.webView goBack];
-    }else{
-        //退出控制器
-        UIViewController *vc = [self findCurrentViewController];
-        [vc.navigationController popViewControllerAnimated:YES];
-    }
+    [self.webView goBack];
+}
+
+- (void)goForward
+{
+    //跳转到下级页面
+    [self.webView goForward];
+}
+
+- (void)goRefreshCurrentPage
+{
+    [self.webView reload];
 }
 
 - (void)closePage
