@@ -16,6 +16,8 @@
 + (void)progressHudShowShortTimeMessage:(NSString *)message;
 //设备入网、对码
 - (void)progressHudWithText:(NSString *)text;
+//默认不传为nil
+- (void)progressHudWithShowText:(NSString *)showText showTime:(NSNumber *)showTime;
 //隐藏
 - (void)progressHudhide;
 

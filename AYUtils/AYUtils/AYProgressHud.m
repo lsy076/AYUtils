@@ -62,10 +62,31 @@
     
 }
 
+- (void)progressHudWithShowText:(NSString *)showText showTime:(NSNumber *)showTime
+{
+    
+    NSString *text = showText.length ? showText : @"";
+    
+    NSNumber *time = showTime.integerValue > 0 ? showTime : @(0);
+
+    self.hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    
+    self.hud.label.text = text;
+    
+    self.hud.label.numberOfLines = 2;
+    // 黑色背景白字
+    self.hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    self.hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.7];
+    self.hud.contentColor=[UIColor whiteColor];//字的颜色
+    
+    [self.hud hideAnimated:YES afterDelay:time.integerValue];
+    
+}
+
+
 - (void)progressHudhide
 {
     [self.hud hideAnimated:YES];
-    
 }
 
 @end
