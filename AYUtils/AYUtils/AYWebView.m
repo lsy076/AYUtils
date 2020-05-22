@@ -166,7 +166,10 @@
         
         [webView evaluateJavaScript:jsContent completionHandler:nil];
         
-        
+        //返回当前加载的网址
+        if ([self.webViewDelegate respondsToSelector:@selector(webView:didFinishLoadedWithURL:)]) {
+            [self.webViewDelegate webView:self didFinishLoadedWithURL:webView.URL.absoluteString];
+        }
     }];
 }
 
@@ -182,10 +185,6 @@
         [webView loadRequest:navigationAction.request];
     }
     decisionHandler(WKNavigationActionPolicyAllow);
-    //返回当前加载的网址
-    if ([self.webViewDelegate respondsToSelector:@selector(webView:didFinishLoadedWithURL:)]) {
-        [self.webViewDelegate webView:self didFinishLoadedWithURL:navigationAction.request.URL.absoluteString];
-    }
 }
 
 - (void)goBack

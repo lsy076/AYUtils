@@ -8,6 +8,7 @@
 
 #import "NextViewController.h"
 #import "AYUtils/AYWebView.h"
+#import "AYUtils.h"
 
 @interface NextViewController () <AYWebViewDelegate>
 
@@ -47,11 +48,14 @@
     [self.view addSubview:webView];
     self.webView = webView;
     
+    [[AYProgressHud sharedInstance] progressHudWithShowText:@"登录中" showTime:@(15)];
 }
 
 - (void)webView:(AYWebView *)webView didFinishLoadedWithURL:(NSString *)url
 {
     NSLog(@"%@", url);
+    
+    [[AYProgressHud sharedInstance] progressHudhide];
 }
 
 @end
