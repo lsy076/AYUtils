@@ -48,6 +48,7 @@
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
+            alert(alertVC);
         }];
         
         [cancelAction setValue:[UIColor grayColor] forKey:@"_titleTextColor"];
