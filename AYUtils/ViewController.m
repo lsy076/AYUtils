@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "NextViewController.h"
+#import "AYUtils.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,11 @@
     
 }
 - (IBAction)jumpWebView:(id)sender {
-    [self.navigationController pushViewController:[NextViewController new] animated:YES];
+//    [self.navigationController pushViewController:[NextViewController new] animated:YES];
+    
+    [AYAlertViewController alertViewController:self title:@"title" message:@"message" cancel:@"cancel" confirm:@"confirm" style:AYAlertViewControllerStylePasswordNone alert:^(UIAlertController *action, int index) {
+        NSLog(@"%d", index);
+    }];
 }
 
 @end

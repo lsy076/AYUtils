@@ -16,7 +16,7 @@ typedef enum : NSUInteger {
 
 typedef void(^AYActionCompletionBlock)(int index);
 
-typedef void(^AYAlertCompletionBlock)(UIAlertController *action);
+typedef void(^AYAlertCompletionBlock)(UIAlertController *action, int index);
 
 @interface AYAlertViewController : NSObject
 

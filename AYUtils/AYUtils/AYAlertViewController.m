@@ -24,7 +24,7 @@
         
     }
     
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive handler:nil]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil]];
     
     [viewController presentViewController:alertVC animated:YES completion:nil];
     
@@ -47,8 +47,8 @@
     if (cancel.length > 0) {
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-            alert(alertVC);
+            int index = (int)[alertVC.actions indexOfObject:action];
+            alert(alertVC, index);
         }];
         
         [cancelAction setValue:[UIColor grayColor] forKey:@"_titleTextColor"];
@@ -61,13 +61,17 @@
         
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:confirm style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            alert(alertVC);
+            int index = (int)[alertVC.actions indexOfObject:action];
+            alert(alertVC, index);
         }];
         
         [alertVC addAction:okAction];
     }
     
-    [viewController presentViewController:alertVC animated:YES completion:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [viewController presentViewController:alertVC animated:YES completion:nil];
+    });
+    
 }
 
 @end
