@@ -48,7 +48,9 @@
     [self.view addSubview:webView];
     self.webView = webView;
     
-    [[AYProgressHud sharedInstance] progressHudWithShowText:@"登录中" showTime:@(15)];
+//    [[AYProgressHud sharedInstance] progressHudWithShowText:@"登录中" showTime:@(15)];
+    
+    [AYProgressHud progressHudShowShortTimeMessage:@"xxxdddsss"];
 }
 
 - (void)webView:(AYWebView *)webView didFinishLoadedWithURL:(NSString *)url

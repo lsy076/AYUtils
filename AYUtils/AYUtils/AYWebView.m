@@ -132,7 +132,6 @@
 #pragma mark 下面连续的四个函数是对WKNavigationDelegate的实现
 #pragma mark 开始加载数据
 - (void) webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
-//    NSLog(@"UIWebView-->start");
     
     //开始加载网页时展示出progressView
     self.progressView.hidden = NO;
@@ -144,12 +143,10 @@
 
 #pragma mark 数据返回 开始在界面上显示
 - (void) webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
-//    NSLog(@"UIWebView-->response");
 }
 
 #pragma mark 数据加载完毕
 - (void) webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-//    NSLog(@"UIWebView-->finish");
 
     //  网页加载完成后禁止缩放
     NSString *injectionJSString = @"var script = document.createElement('meta');"
@@ -175,7 +172,6 @@
 
 #pragma mark 加载数据错误
 - (void) webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(nonnull NSError *)error{
-//    NSLog(@"UIWebView-->fail");
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler

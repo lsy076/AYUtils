@@ -35,6 +35,10 @@
     [hud setOffset:CGPointMake(0, 0)];
     [hud hideAnimated:YES afterDelay:1.f];
     hud.label.numberOfLines = 0;
+    
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:1];
+    hud.contentColor=[UIColor whiteColor];//字的颜色
 }
 
 - (void)progressHudWithText:(NSString *)text
@@ -47,7 +51,7 @@
     self.hud.label.numberOfLines = 2;
     // 黑色背景白字
     self.hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-    self.hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.7];
+    self.hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:1];
     self.hud.contentColor=[UIColor whiteColor];//字的颜色
     
     if (text.length) {
@@ -76,7 +80,7 @@
     self.hud.label.numberOfLines = 2;
     // 黑色背景白字
     self.hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-    self.hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.7];
+    self.hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:1];
     self.hud.contentColor=[UIColor whiteColor];//字的颜色
     
     [self.hud hideAnimated:YES afterDelay:time.integerValue];
