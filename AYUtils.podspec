@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "AYUtils"
-s.version      = "0.1.3"
+s.version      = "0.1.4"
 s.summary      = "AYUtils"
 s.description  = <<-DESC
 AYUtils工具类
