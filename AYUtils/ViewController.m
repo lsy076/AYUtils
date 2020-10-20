@@ -18,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    [AYAlertViewController alertViewController:self title:@"title" message:@"message" cancel:@"cancel" confirm:@"confirm" style:AYAlertViewControllerStylePasswordText alert:^(UIAlertController *action, int index) {
+//        NSLog(@"%d", index);
+//    }];
 }
 - (IBAction)jumpWebView:(id)sender {
     [self.navigationController pushViewController:[NextViewController new] animated:YES];

@@ -34,13 +34,26 @@
 {
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    if (style) {
-        
-        [alertVC addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-            textField.placeholder = @"Password";
-            textField.secureTextEntry = YES;
-        }];
-        
+    switch (style) {
+        case AYAlertViewControllerStylePasswordText:
+        {
+            [alertVC addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                textField.placeholder = @"Password";
+                textField.secureTextEntry = YES;
+                textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            }];
+        }
+            break;
+        case AYAlertViewControllerStyleNormalText:
+        {
+            [alertVC addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            }];
+        }
+            break;
+            
+        default:
+            break;
     }
     
     // cancel

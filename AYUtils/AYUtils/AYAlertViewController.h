@@ -12,6 +12,7 @@
 typedef enum : NSUInteger {
     AYAlertViewControllerStylePasswordNone,
     AYAlertViewControllerStylePasswordText,
+    AYAlertViewControllerStyleNormalText
 } AYAlertViewControllerStylePassword;
 
 typedef void(^AYActionCompletionBlock)(int index);
