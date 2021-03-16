@@ -75,7 +75,7 @@
         unsigned long  rc4_data_len = tenData.length;
         char *outdata = (char*)calloc(strlen(rc4_data) + 1, 1);
     
-        Transform(key_data, (int)key.length, outdata, rc4_data, rc4_data_len);
+        Transform(key_data, (int)key.length, outdata, rc4_data, (int)rc4_data_len);
         outdata[rc4_data_len] = 0;
         NSString *str = [NSString stringWithCString:outdata encoding:NSUTF8StringEncoding];
     
