@@ -21,3 +21,5 @@ FOUNDATION_EXPORT const unsigned char AYUtilsVersionString[];
 #import "AYWebView.h"
 #import "AYGetLocalIpAddress.h"
 #import "EncodeControl.h"
+#include "rc4Encode.h"
+#include "base64.h"
