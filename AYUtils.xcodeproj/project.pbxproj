@@ -19,6 +19,9 @@
 		195B6B5D23403E4A002637AA /* AYGetLocalIpAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 195B6B5B23403E4A002637AA /* AYGetLocalIpAddress.m */; };
 		35A60C8F24348E5500BF7148 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A60C8E24348E5500BF7148 /* NextViewController.m */; };
 		9F79ACACF029A7B48A3F5B2D /* libPods-AYUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A829B4762E8BAB80E42719D9 /* libPods-AYUtils.a */; };
+		A3E7D4032600485F00537325 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = A3E7D3FF2600485F00537325 /* base64.c */; };
+		A3E7D4042600485F00537325 /* EncodeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E7D4002600485F00537325 /* EncodeControl.m */; };
+		A3E7D4052600485F00537325 /* rc4Encode.c in Sources */ = {isa = PBXBuildFile; fileRef = A3E7D4012600485F00537325 /* rc4Encode.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,12 @@
 		2BAE42476DCD3EAE45EE4CBD /* Pods-AYUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYUtils.release.xcconfig"; path = "Target Support Files/Pods-AYUtils/Pods-AYUtils.release.xcconfig"; sourceTree = "<group>"; };
 		35A60C8D24348E5500BF7148 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		35A60C8E24348E5500BF7148 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
+		A3E7D3FD2600485F00537325 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		A3E7D3FE2600485F00537325 /* EncodeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeControl.h; sourceTree = "<group>"; };
+		A3E7D3FF2600485F00537325 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		A3E7D4002600485F00537325 /* EncodeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodeControl.m; sourceTree = "<group>"; };
+		A3E7D4012600485F00537325 /* rc4Encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rc4Encode.c; sourceTree = "<group>"; };
+		A3E7D4022600485F00537325 /* rc4Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rc4Encode.h; sourceTree = "<group>"; };
 		A829B4762E8BAB80E42719D9 /* libPods-AYUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AYUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43AA4229AFE84EB30D2EC5E /* Pods-AYUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYUtils.debug.xcconfig"; path = "Target Support Files/Pods-AYUtils/Pods-AYUtils.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +118,12 @@
 				195B6B5223403E2F002637AA /* AYProgressHud.m */,
 				195B6B5523403E2F002637AA /* AYWebView.h */,
 				195B6B5423403E2F002637AA /* AYWebView.m */,
+				A3E7D3FF2600485F00537325 /* base64.c */,
+				A3E7D3FD2600485F00537325 /* base64.h */,
+				A3E7D3FE2600485F00537325 /* EncodeControl.h */,
+				A3E7D4002600485F00537325 /* EncodeControl.m */,
+				A3E7D4012600485F00537325 /* rc4Encode.c */,
+				A3E7D4022600485F00537325 /* rc4Encode.h */,
 			);
 			path = AYUtils;
 			sourceTree = "<group>";
@@ -227,9 +242,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				195B6B5723403E30002637AA /* AYWebView.m in Sources */,
+				A3E7D4042600485F00537325 /* EncodeControl.m in Sources */,
 				195B6B4023403D6E002637AA /* ViewController.m in Sources */,
 				195B6B4B23403D78002637AA /* main.m in Sources */,
 				195B6B5623403E30002637AA /* AYProgressHud.m in Sources */,
+				A3E7D4052600485F00537325 /* rc4Encode.c in Sources */,
+				A3E7D4032600485F00537325 /* base64.c in Sources */,
 				195B6B3D23403D6E002637AA /* AppDelegate.m in Sources */,
 				35A60C8F24348E5500BF7148 /* NextViewController.m in Sources */,
 				195B6B5A23403E3C002637AA /* AYAlertViewController.m in Sources */,
@@ -386,6 +404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dnake.AYUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -405,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dnake.AYUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
