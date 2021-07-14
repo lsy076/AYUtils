@@ -28,6 +28,9 @@
 //    [AYAlertViewController alertViewController:self title:@"title" message:@"message" cancel:@"cancel" confirm:@"confirm" style:AYAlertViewControllerStylePasswordNone alert:^(UIAlertController *action, int index) {
 //        NSLog(@"%d", index);
 //    }];
+    
+    [AYProgressHud progressHudShowShortTimeMessage:@"跳转网页跳"];
+    
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "AYProgressHud.h"
 #import "MBProgressHud.h"
+#import "KKPaddingLabel.h"
 
 @interface AYProgressHud ()
 
@@ -27,18 +28,48 @@
     return sharedClient;
 }
 
+//+ (void)progressHudShowShortTimeMessage:(NSString *)message {
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+//    hud.mode = MBProgressHUDModeText;
+//    hud.label.text = NSLocalizedString(message, @"HUD message title");
+//    // Move to bottm center.
+//    [hud setOffset:CGPointMake(0, 0)];
+//    [hud hideAnimated:YES afterDelay:1.f];
+//    hud.label.numberOfLines = 0;
+//
+//    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+//    hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:1];
+//    hud.contentColor=[UIColor whiteColor];//字的颜色
+//}
+
 + (void)progressHudShowShortTimeMessage:(NSString *)message {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = NSLocalizedString(message, @"HUD message title");
+    hud.mode = MBProgressHUDModeCustomView;
+//    hud.label.text = NSLocalizedString(message, @"HUD message title");
     // Move to bottm center.
-    [hud setOffset:CGPointMake(0, 0)];
+    [hud setOffset:CGPointMake(0, [UIScreen mainScreen].bounds.size.height / 3)];
     [hud hideAnimated:YES afterDelay:1.f];
-    hud.label.numberOfLines = 0;
-    
+//    hud.label.numberOfLines = 0;
+//
     hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-    hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:1];
-    hud.contentColor=[UIColor whiteColor];//字的颜色
+//    hud.bezelView.backgroundColor=[UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.8];
+//    hud.contentColor=[UIColor whiteColor];//字的颜色
+//    hud.bezelView.frame = CGRectMake(0, 0, 0, 20);
+//    hud.bezelView.layer.cornerRadius = 30;
+//    hud.bezelView.clipsToBounds = YES;
+    
+    KKPaddingLabel *label = [[KKPaddingLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    label.text = message;
+    label.padding = UIEdgeInsetsMake(5, 10, 5, 10);
+    label.layer.cornerRadius = 15;
+    label.clipsToBounds = YES;
+    label.numberOfLines = 0;
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor colorWithRed:1/255.0 green:1/255.0 blue:1/255.0 alpha:0.5];
+
+    [hud setCustomView:label];
+    
 }
 
 - (void)progressHudWithText:(NSString *)text

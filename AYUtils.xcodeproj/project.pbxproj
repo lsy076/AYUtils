@@ -19,6 +19,7 @@
 		195B6B5D23403E4A002637AA /* AYGetLocalIpAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 195B6B5B23403E4A002637AA /* AYGetLocalIpAddress.m */; };
 		35A60C8F24348E5500BF7148 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A60C8E24348E5500BF7148 /* NextViewController.m */; };
 		9F79ACACF029A7B48A3F5B2D /* libPods-AYUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A829B4762E8BAB80E42719D9 /* libPods-AYUtils.a */; };
+		A35E6D52269EEC960040E38F /* KKPaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A35E6D51269EEC960040E38F /* KKPaddingLabel.m */; };
 		A3E7D424260087BA00537325 /* EncodeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E7D423260087BA00537325 /* EncodeControl.m */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		2BAE42476DCD3EAE45EE4CBD /* Pods-AYUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYUtils.release.xcconfig"; path = "Target Support Files/Pods-AYUtils/Pods-AYUtils.release.xcconfig"; sourceTree = "<group>"; };
 		35A60C8D24348E5500BF7148 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		35A60C8E24348E5500BF7148 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
+		A35E6D50269EEC960040E38F /* KKPaddingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPaddingLabel.h; sourceTree = "<group>"; };
+		A35E6D51269EEC960040E38F /* KKPaddingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPaddingLabel.m; sourceTree = "<group>"; };
 		A3E7D422260087BA00537325 /* EncodeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeControl.h; sourceTree = "<group>"; };
 		A3E7D423260087BA00537325 /* EncodeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodeControl.m; sourceTree = "<group>"; };
 		A829B4762E8BAB80E42719D9 /* libPods-AYUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AYUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +106,8 @@
 		195B6B5123403E13002637AA /* AYUtils */ = {
 			isa = PBXGroup;
 			children = (
+				A35E6D50269EEC960040E38F /* KKPaddingLabel.h */,
+				A35E6D51269EEC960040E38F /* KKPaddingLabel.m */,
 				195B6B7923404D18002637AA /* AYUtils.h */,
 				195B6B5C23403E4A002637AA /* AYGetLocalIpAddress.h */,
 				195B6B5B23403E4A002637AA /* AYGetLocalIpAddress.m */,
@@ -233,6 +238,7 @@
 			files = (
 				195B6B5723403E30002637AA /* AYWebView.m in Sources */,
 				A3E7D424260087BA00537325 /* EncodeControl.m in Sources */,
+				A35E6D52269EEC960040E38F /* KKPaddingLabel.m in Sources */,
 				195B6B4023403D6E002637AA /* ViewController.m in Sources */,
 				195B6B4B23403D78002637AA /* main.m in Sources */,
 				195B6B5623403E30002637AA /* AYProgressHud.m in Sources */,

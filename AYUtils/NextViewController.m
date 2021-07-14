@@ -50,7 +50,7 @@
     
 //    [[AYProgressHud sharedInstance] progressHudWithShowText:@"登录中" showTime:@(15)];
     
-    [AYProgressHud progressHudShowShortTimeMessage:@"xxxdddsss"];
+//    [AYProgressHud progressHudShowShortTimeMessage:@"xxxdddsss"];
 }
 
 - (void)webView:(AYWebView *)webView didFinishLoadedWithURL:(NSString *)url
